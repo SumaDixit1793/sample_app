@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\timeline-server"
+		},
+		{
+			"path": "..\\timeline-client"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

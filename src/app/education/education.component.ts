@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UsersService } from '../users.service'
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
@@ -51,7 +51,7 @@ export class EducationComponent implements OnInit {
     ];
 
 
-    constructor() {
+    constructor(private user:UsersService) {
       this.start_year=new Date();
       this.end_year=new Date();
       this.graduated=true;
@@ -65,6 +65,9 @@ export class EducationComponent implements OnInit {
      set_graduated(){
       this.graduated = !(this.graduated);
      }
+     get_graduated(){
+       return this.graduated;
+     }
      add_education()
      {
       this.showFirst = !(this.showFirst);
@@ -72,5 +75,13 @@ export class EducationComponent implements OnInit {
      }
     ngOnInit(): void {
     }
-    
+    check_admission()
+    {
+      this.user.setParams(this.graduated ? "1" : "0")
+      this.user.getData().subscribe(data=>{
+        console.warn(data);
+        var x =JSON.parse(JSON.stringify(data));
+        alert(" Message from API "+x.admin_message);
+      })
+    }
 }

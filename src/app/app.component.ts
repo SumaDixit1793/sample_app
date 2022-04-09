@@ -1,4 +1,6 @@
+// Demonstrate the API calling from angular
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample_app';
+  constructor()
+  {
+    // alert()
+  }
 }
