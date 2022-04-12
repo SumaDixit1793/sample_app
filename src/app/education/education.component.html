@@ -1,62 +1,58 @@
 <section>
     <div>
-        <label for="start_year">Start Year</label>
-        <input type="date" id="start_year" name="start_year"
-                value="2022-03-25"
-                min="1978-01-01" max="2022-03-25">
+        <label for="start_year_1">Start Year</label>
+        <input type="date" id="start_year_1" name="start_year_1"
+                min="1978-01-01" max="2022-03-25" value="2022-03-25" (change)="set_start_year_component_1(start_year_1.value)" #start_year_1/>
         <br>
         <br>
-        <label for="end_year">End Year</label>
-        <input type="date" id="end_year" name="end_year"
-                value="2022-03-25"
-                min="1978-01-01" max="2026-12-31">
+        <label for="end_year_1">End Year</label>
+        <input type="date" name="end_year_1"
+                min="1978-01-01" max="2026-12-31" value="2026-12-31" (change)="set_end_year_component_1(end_year_1.value)" #end_year_1/>
         <br>
         <br>
-        <label for="graduated">Have you graduated?</label>
-        <input id="graduated" name="graduated" type="checkbox" [checked]="graduated" 
-        (click)="set_graduated()"/>
+        <label for="graduated_1">Have you graduated?</label>
+        <input name="graduated_1" type="checkbox" [checked]="graduated_1" 
+        (click)="set_graduated_component_1(graduated_1.value)" #graduated_1/>
         <br>
         <br>
-        <label for="degree">Degree</label>
-        <select ng-model="degree">
-            <option *ngFor="let d of available_degrees" value="{{d.name}}">{{ d.name }}</option>
+        <label for="degree_1">Degree</label>
+        <select (ngModel)="degree_1" (change)="set_degree_component_1($event)">
+            <option *ngFor="let d of available_degrees" (ngValue)="d.name">{{ d.name }}</option>
         </select>
         <br>
         <br>
-        <label for="major">Major</label>
-        <select ng-model="major">
-            <option *ngFor="let m of available_majors" value="{{m.name}}">{{ m.name }}</option>
+        <label for="major_1">Major</label>
+        <select (ngModel)="major_1" (change)="set_major_component_1($event)">
+            <option *ngFor="let m of available_majors" ngValue="m.name">{{ m.name }}</option>
         </select>
     </div>
     <br>
     <br>
     <div [hidden]="hidden_education_div">
-        <label for="start_year">Start Year</label>
-        <input type="date" id="start_year" name="start_year"
-                value="2022-03-25"
-                min="1978-01-01" max="2022-03-25">
+        <label for="start_year_2">Start Year</label>
+        <input type="date" id="start_year_2" name="start_year_2"
+                min="1978-01-01" max="2022-03-25"  value="2022-03-25" (change)="set_start_year_component_2(start_year_2.value)" #start_year_2/>
         <br>
         <br>
-        <label for="end_year">End Year</label>
-        <input type="date" id="end_year" name="end_year"
-                value="2022-03-25"
-                min="1978-01-01" max="2026-12-31">
+        <label for="end_year_2">End Year</label>
+        <input type="date" name="end_year_2"
+                min="1978-01-01" max="2026-12-31" value="2026-12-31" (change)="set_end_year_component_2(end_year_2.value)" #end_year_2/>
         <br>
         <br>
-        <label for="graduated">Have you graduated?</label>
-        <input id="graduated" name="graduated" type="checkbox" [checked]="graduated" 
-        (click)="set_graduated()"/>
+        <label for="graduated_2">Have you graduated?</label>
+        <input name="graduated_2" type="checkbox" [checked]="graduated_2" 
+        (click)="set_graduated_component_2(graduated_1.value)" #graduated_2/>
         <br>
         <br>
-        <label for="degree">Degree</label>
-        <select ng-model="degree">
-            <option *ngFor="let d of available_degrees" value="{{d.name}}">{{ d.name }}</option>
+        <label for="degree_2">Degree</label>
+        <select (ngModel)="degree_2" (change)="set_degree_component_2($event)">
+            <option *ngFor="let d of available_degrees" (ngValue)="d.name">{{ d.name }}</option>
         </select>
         <br>
         <br>
-        <label for="major">Major</label>
-        <select ng-model="major">
-            <option *ngFor="let m of available_majors" value="{{m.name}}">{{ m.name }}</option>
+        <label for="major_2">Major</label>
+        <select (ngModel)="major_2" (change)="set_major_component_2($event)">
+            <option *ngFor="let m of available_majors" ngValue="m.name">{{ m.name }}</option>
         </select>
     </div>
     <br>
